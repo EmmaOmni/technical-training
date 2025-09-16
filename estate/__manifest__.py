@@ -3,9 +3,13 @@
     "version": "16.0.0",  # Version
     "application": True,  # This line says the module is an App, and not a module
     "depends": ["base"],  # dependencies
-    "data": [
-
-    ],
+    "data": [],
     "installable": True,
-    'license': 'LGPL-3',
+    "license": "LGPL-3",
+    "depends": ["base"],
+    "data": [
+        "security/ir.model.access.csv",
+        "views/estate_property_views.xml",
+        "views/estate_property_menus.xml",
+    ],
 }
