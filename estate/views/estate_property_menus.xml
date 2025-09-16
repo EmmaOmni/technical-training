@@ -1,6 +1,8 @@
-<menuitem id="menu_estate_property_root" name="Estate Property">
-    <menuitem id="estate_advertissement_menu" name="Advertissement">
-        <menuitem id="estate_property_menu_action" name="Property" action="estate_property">
+<xml version="1.0">
+    <menuitem id="menu_estate_property_root" name="Estate Property">
+        <menuitem id="estate_advertissement_menu" name="Advertissement">
+            <menuitem id="estate_property_menu_action" name="Property" action="estate_property">
+            </menuitem>
         </menuitem>
     </menuitem>
-</menuitem>
+</xml>
