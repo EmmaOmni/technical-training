@@ -1,9 +1,15 @@
 <?xml version="1.0" encoding="utf-8"?>
 <odoo>
-    <list>
-        <field name="name">
-        <field name="description">
-        <field name="bedrooms">
-        <button type="edit" name="edit" icon="fa-edit" title="Edit"/>
-    </List>
+    <record id="estate_property_list" model="ir.ui.view">
+        <field name="name">estate.property.list</field>
+        <field name="model">estate.property</field>
+        <field name="arch" type="xml">
+            <list string="Estate Property">
+                <field name="name">
+                <field name="description">
+                <field name="bedrooms">
+                <button type="edit" name="edit" icon="fa-edit" title="Edit"/>
+            </List>
+        </field>
+    <record>
 </odoo>
