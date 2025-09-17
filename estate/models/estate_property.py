@@ -24,20 +24,20 @@ class EstateProperty(models.Model):
     living_area = fields.Integer(string="Living Area")
     cancelled = fields.Boolean(string="Cancelled")
     sold = fields.Boolean(string="Sold")
-    offer_ids = fields.One2many("estate.offer", string="Offer")
+    offer_ids = fields.One2many("estate.offer", "property_id", string="Offer")
 
     total_area = fields.Integer(compute="_compute_areas")
 
     best_offer_price = fields.Integer(compute="_compute_best_offer_price")
 
-    def _compute_best_offer_price(self):
+    def _compute_areas(self):
         for record in self:
             record.total_area = record.living_area + record.garden_area
 
     def _onchange_description(self):
         self.description += "... desc"
 
-    def action_cancel_(self):
+    def action_cancel(self):
         for estate_property in self:
             estate_property.cancelled = True
             estate_property.sold = False
