@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="property_estate_search" model="ir.ui.view">
+        <field name="name">estate.property.search</field>
+        <field name="model">estate.property</field>
+        <field name="arch" type="xml">
+            <search string="Estate Property">
+                <field name="name" string="Carrier" />
+                <field name="description" />
+                <separator />
+                <filter string="Name" name="name" domain="[('name', 'liike', 'a')]" />
+            </search>
+        </field>
+    </record>
+</odoo>
