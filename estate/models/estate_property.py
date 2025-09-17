@@ -20,3 +20,4 @@ class EstateProperty(models.Model):
             ("west", "West"),
         ],
     )
+    offers = fields.Many2one("estate.offer", string="Offer")

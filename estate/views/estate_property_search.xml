@@ -5,7 +5,7 @@
         <field name="model">estate.property</field>
         <field name="arch" type="xml">
             <search string="Estate Property">
-                <field name="name" string="Carrier" />
+                <field name="name" />
                 <field name="description" />
                 <separator />
                 <filter string="Name" name="name" domain="[('name', 'liike', 'a')]" />
