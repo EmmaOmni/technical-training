@@ -20,4 +20,4 @@ class EstateProperty(models.Model):
             ("west", "West"),
         ],
     )
-    offer_id = fields.Many2one("estate.offer", string="Offer")
+    offer_ids = fields.One2many("estate.offer", string="Offer")
