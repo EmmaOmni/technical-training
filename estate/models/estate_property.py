@@ -1,4 +1,4 @@
-from odoo import fields, models
+from odoo import api, fields, models
 
 
 class EstateProperty(models.Model):
@@ -20,4 +20,25 @@ class EstateProperty(models.Model):
             ("west", "West"),
         ],
     )
+    garden_area = fields.Integer(string="Garden Area")
+    living_area = fields.Integer(string="Living Area")
+    cancelled = fields.Boolean(string="Cancelled")
+    sold = fields.Boolean(string="Sold")
     offer_ids = fields.One2many("estate.offer", string="Offer")
+
+    total_area = fields.Integer(compute="_compute_areas")
+
+    best_offer_price = fields.Integer(compute="_compute_best_offer_price")
+
+    def _compute_best_offer_price(self):
+        for record in self:
+            record.total_area = record.living_area + record.garden_area
+
+    def _onchange_description(self):
+        self.description += "... desc"
+
+    def action_cancel_(self):
+        for estate_property in self:
+            estate_property.cancelled = True
+            estate_property.sold = False
+        return True

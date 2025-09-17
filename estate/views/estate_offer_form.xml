@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="estate_property_form" model="ir.ui.view">
+        <field name="name">estate</field>
+        <field name="model">estate.property</field>
+        <field name="arch" type="xml">
+            <form string="Estate Property">
+                <header>
+                    <button type="action" name="%(action_accept_offer)d"
+                        string="Accept" />
+                    <button type="action" name="%(action_refuse_offer)d"
+                        string="Refuse" />
+                </header>
+                <field name="price" />
+                <field name="accepted" readonly="True" />
+                <field name="refused" readonly="True" />
+            </form>
+        </field>
+    </record>
+</odoo>
